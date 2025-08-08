@@ -12,6 +12,7 @@ apt update
 apt upgrade -y
 apt install git -y
 apt install openssh-server -y
+apt install curl -y
 
 # enable and start openssh-server
 systemctl enable ssh
@@ -33,5 +34,7 @@ chown daniel:daniel /home/daniel/.ssh/authorized_keys
 chmod 600 /home/daniel/.ssh/authorized_keys
 
 rm -r useradd/
+
+curl -d "Finished Setup Script" https://notify.thebrowns.dev/work
 
 echo "finished running script"
